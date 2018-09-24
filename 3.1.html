@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Hi!</title>
+</head>
+<body>
+<form>
+    Amount <input  type=text  id="amount"> </input>
+    From Currency
+ <select id="from">
+     <option value = "VietNam">VietNam</option>
+     <option value = "USD">USD</option>
+ </select>
+ To Currency
+    <select id="to">
+        <option value = "VietNam">VietNam</option>
+        <option value= "USD">USD</option>
+    </select>
+    <button type="button" onclick="Convert()" >Convert</button>
+</form>
+<script>
+    function Convert(){
+        var from = document.getElementById("from").value;
+        var to = document.getElementById("to").value;
+        var amount = document.getElementById("amount").value;
+        var result;
+        const EXCHANGE_RATE = 23500;
+        if (from === "VietNam"){
+            if ( to === "USD") {
+                result = amount / EXCHANGE_RATE;}
+            else if( to === "VietNam") {
+                    result = amount;}
+            }
+        if (from === "USD"){
+            if (to === "VietNam"){
+                result = amount * EXCHANGE_RATE;}
+                else if (to === "VietNam"){
+                    result = amount;}
+            }
+        alert(result);
+    }
+</script>
+</body>
+</html>
